@@ -1,5 +1,5 @@
 # Devs-Den-Frontend
- An anonymous message sharing platform 
+ An anonymous message sharing platform. 
 
 ## Description
 
