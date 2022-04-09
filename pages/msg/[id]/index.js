@@ -24,7 +24,7 @@ function Msg(props) {
               }
 
               try {
-                     const res = await axios(`${process.env.REACT_APP_WEBSITE_URL}/api/msg/${id}/unlock`, {
+                     const res = await axios(`${process.env.NEXT_PUBLIC_WEBSITE_URL}/api/msg/${id}/unlock`, {
                             method: "POST",
                             headers: {
                                    "Content-Type": "application/json"
@@ -34,8 +34,6 @@ function Msg(props) {
                      if(res.data.success) {
                             setMsg(res.data.msg)
                             setPassProtected(false)
-                            // if (res.data.msg.destroy)
-                            //        setTimeout(() => removeMsg(),5000);
                      } else {
                             setError("Wrong password! Please try again.")
                      }
@@ -51,10 +49,9 @@ function Msg(props) {
                      setTimeout(async() => {
                             if (msg.destroy) {
                                    try {
-                                          const res = await axios(`${process.env.REACT_APP_WEBSITE_URL}/api/msg/${id}/`, {
+                                          const res = await axios(`${process.env.NEXT_PUBLIC_WEBSITE_URL}/api/msg/${id}/`, {
                                                  method: "DELETE"
                                           })
-                                          console.log("Removed?");
                                    } catch (error) {
                                           console.log(error);
                                    }
@@ -150,7 +147,7 @@ function Msg(props) {
 
 export async function getServerSideProps({params}) {
        const id = params.id;
-       const res = await axios(`http://localhost:3000/api/msg/${id}`);
+       const res = await axios(`${process.env.NEXT_PUBLIC_WEBSITE_URL}/api/msg/${id}`);
        if (res.data.success===true) {
               if (res.data.msg) {
                      return {

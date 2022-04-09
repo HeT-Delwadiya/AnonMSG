@@ -1,7 +1,6 @@
 import React from "react";
 import axios from "axios";
 import { useRouter } from 'next/router'
-import Link from 'next/link';
 
 function Create(props) {
 
@@ -20,7 +19,6 @@ function Create(props) {
        const [removed, setRemoved] = React.useState(false);
        const [id, setId] = React.useState(false);
        const router = useRouter()
-
 
        const handleSubmit = async(event) => {
               event.preventDefault();
@@ -61,7 +59,7 @@ function Create(props) {
               }
 
               try {
-                     const res = await axios(`${process.env.REACT_APP_WEBSITE_URL}/api/msg/add`, {
+                     const res = await axios(`${process.env.NEXT_PUBLIC_WEBSITE_URL}/api/msg/add`, {
                             method: "POST",
                             headers: {
                                    "Content-Type": "application/json"
@@ -69,7 +67,7 @@ function Create(props) {
                             data: JSON.stringify(data)
                      })
                      if(res.data.success) {
-                            setLink(process.env.REACT_APP_WEBSITE_URL+"/msg/"+res.data.msg._id)
+                            setLink(process.env.NEXT_PUBLIC_WEBSITE_URL+"/msg/"+res.data.msg._id)
                             setId(res.data.msg._id)
                             setSuccess(res.data.success)
                             setMsg("")
@@ -89,7 +87,7 @@ function Create(props) {
               setIsRemoving(true)
 
               try {
-                     const res = await axios(`${process.env.REACT_APP_WEBSITE_URL}/api/msg/${id}`, {
+                     const res = await axios(`${process.env.NEXT_PUBLIC_WEBSITE_URL}/api/msg/${id}`, {
                             method: "DELETE"
                      })
                      setIsRemoving(false)
