@@ -1,4 +1,4 @@
-# Devs-Den-Frontend
+# AnonMSG
  An anonymous message sharing platform. 
 
 ## Description
