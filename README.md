@@ -1,9 +1,9 @@
-# Devs-Den-Frontend
+# AnonMSG
  An anonymous message sharing platform. 
 
 ## Description
 
-A platform built with NEXT js, and used mongo as database. You can share secret message with seft-destruction option after being read and password protection option is also available. You can set auto destruction time of message also.
+A platform built using NEXT JS, and used mongo as database. You can share secret message with seft-destruction option after being read and password protection option is also available. You can set auto destruction time of message also.
 
 ## Demo
   * [![Netlify Status](https://api.netlify.com/api/v1/badges/cfeb04a4-5920-4982-af4e-7fc17f21eb30/deploy-status)](https://app.netlify.com/sites/anonmsg/deploys)
