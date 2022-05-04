@@ -41,7 +41,7 @@ $ npm run build
 ## Run the application for development
 
 ```
-$ npm run dev
+$ npm run dev 
 ```
 
 
