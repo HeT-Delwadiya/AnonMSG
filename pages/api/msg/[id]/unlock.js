@@ -12,11 +12,11 @@ export default async(req, res) => {
        try {
               const msg = await Msg.findById(id)
               if (!msg) {
-                     res.status(400).json({success: false})
+                     res.status(200).json({success: false})
               } else if(msg.password==req.body.password) {
                      res.status(200).json({success: true, msg: msg})
               } else {
-                     res.status(400).json({success: false, error: "Wrong password!"})
+                     res.status(200).json({success: false, error: "Wrong password!"})
               }
 
        } catch (error) {

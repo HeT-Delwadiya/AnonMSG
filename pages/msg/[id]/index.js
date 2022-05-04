@@ -62,7 +62,7 @@ function Msg(props) {
 
        const errorMsg = () => {
               return (
-                     <div className="alert alert-danger mt-3 mx-5" role="alert" style={{display: error? "":"none", fontWeight:"500"}}>
+                     <div className="alert alert-danger mt-5 mx-5" role="alert" style={{display: error? "":"none", fontWeight:"500"}}>
                             {error}
                      </div>
               )
